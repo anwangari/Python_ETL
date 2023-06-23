@@ -3,10 +3,11 @@ In this project, I am developing a custom python ETL class to automate scraping 
 I will also make a prediction model to predict future price / volatility, and make a simple web app to serve my model’s predictions
 
 ## Description
-### 1. Configuration Module: `config.py`
+### 1. `config.py`
 `config.py` serves as a configuration module for storing sensitive information. It searches for a `.env` file and reads its contents
 
 ### 2. `API.ipynb`
-This notebook fetches currency exchange data from an API, converts it into a Pandas DataFrame, and performs data cleaning. It demonstrates the installation of libraries, constructing the API URL, sending requests, extracting the data, converting the index to DateTime format, and cleaning column names. The notebook also includes a function and a class for automating the data retrieval process. It showcases API integration and data manipulation using Python and Pandas.
+This notebook showcases API integration and data manipulation using Python and Pandas.
 
-### 
+### 3. `data.py`
+The `data.py` module provides a class `API` that **EXTRACT and TRANSFORM** foreign exchange data from the Alpha Vantage API and returns it as a clean Pandas DataFrame.
