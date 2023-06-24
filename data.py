@@ -41,3 +41,35 @@ class API:
         df.columns = [c.split(". ")[1] for c in df.columns]
 
         return df
+
+class SQLRepo:
+    def __init__(self, connection=sqlite3.connect(settings.db_name, check_same_thread=False)):
+        
+        self.connection = connection
+        
+    def load_data(self, records, currency_from="USD", currency_to="KES", if_exists="fail"):
+        table_name = f"{currency_from}{currency_to}"
+        # read data to database
+        n_records = records.to_sql(name=table_name, con=self.connection, if_exists=if_exists)
+
+        return {
+          "Table Name: ": table_name,
+          "Number of records updated" : n_records
+          }
+    
+    def get_sql_data(self, currency_from="USD", currency_to="KES", limit=None):
+        # define query
+        if limit:
+            query = f"SELECT * FROM {currency_from}{currency_to} limit {limit}"
+        else:
+            query = f"SELECT * FROM {currency_from}{currency_to}"
+
+        # read data from database
+        df = pd.read_sql(
+            sql=query,
+            con=self.connection,
+            parse_dates=["date"],
+            index_col="date"
+            )
+
+        return df
