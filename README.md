@@ -1,6 +1,6 @@
 # FX-Market-Forecasting
 In this project, I am developing a custom python ETL class to automate scraping of historic forex data from Alpha Vintage API, transform and load the data into a SQL database (SQLite).
-I will also make a prediction model to predict future price / volatility, and make a simple web app to serve my model’s predictions
+I will also make a prediction model to predict volatility, and make a simple web app to serve my model’s predictions
 
 ## Description
 ### 1. `config.py`
