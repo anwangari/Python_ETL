@@ -1,5 +1,5 @@
-# Python ETL
-In this project, I developed a custom python ETL class to automate scraping of historic forex data from Alpha Vintage API, transform, and load the data into a SQL database (SQLite).
+# Data Integration with Alpha Vintage API
+#### In this project, I developed a custom python ETL class to automate scraping of historic forex data from Alpha Vintage API, transform, and load the data into a SQL database (SQLite).
 
 ## Description
 ### 1. `config.py`
